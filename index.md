@@ -1,3 +1,12 @@
+# INDEX
+1. [函数](#函数)
+2. [作用域](#作用域)
+3. [js预解析](#js预解析)
+4. [js对象](#js对象)
+5. [js内置对象](#js内置对象)
+6. [简单数据类型和复杂数据类型](#简单数据类型和复杂数据类型)
+
+
 ## js代码引入
 
 行内引入
@@ -180,6 +189,8 @@ var a = 9, b = 9, c = 9;
   - 调用属性 `对象名.属性` 或 `对象名['属性名']`
   - 调用方法 `对象名.方法名`
 
+
+
 ```js
 var obj = {
   uname: "o",
@@ -199,7 +210,7 @@ obj.sayHi();
 
 - 用赋值`=`添加对象的属性和方法
 - 每个属性和方法之间用`;`结束
-- 
+  
 
 ```js
 var obj = new Object(); // 创建了一个空对象
@@ -210,6 +221,9 @@ obj.sayHi = function() {
 ```
 
 ## 构造函数创建对象
+
+- 构造函数相当于一个类
+- 创建对象的过程称为实例化
 
 ```js
 function 构造函数名() {
@@ -264,7 +278,74 @@ console.log(后裔.Exp);
 
 ## `new`关键字执行过程
 
-> todo p151
+1. 在内存中创建一个空对象
+2. `this` 指向这个空对象
+3. 执行构造函数力的代码，给空对象添加属性和方法
+4. 返回这个对象（`new`会返回，所以不用`return`）
+
+### 遍历对象属性
+
+`for...in`遍历
+```js
+for (var k in obj) {
+  console.log(k); // 键
+  console.log(obj[k]); // 值
+}
+```
 
 
+--- 
+# js内置对象
 
+- TARGET
+  - [js对象分类](#js对象分类)
+  - [会查文档看指定API](#查文档)
+  - [会使用Math对象](#使用Math对象)
+  - [会使用Date对象](#使用Date对象)
+  - [会使用Array对象](#使用Array对象)
+  - [会使用String对象](#使用String对象)
+
+## js对象分类
+
+- 自定义对象
+- 内置对象
+- 浏览器对象
+
+## 查文档
+[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+## 使用Math对象
++ Math数学对象不是函数对象，不用`new`进行创建，可以直接使用
++ 
+## 使用Date对象
+
+## 使用Array对象
+
+## 使用String对象
+
+# 简单数据类型和复杂数据类型
+> 简单数据类型又叫基本数据类型，值类型。
+> 复杂数据类型又叫引用类型
+
+## 简单数据类型内存分配
+
+### 堆，栈
+
+- 简单数据类型放在栈里
+- 复杂数据类型放在堆里
+- 
+简单数据类型：`string`,`boolean`,`number`,`undefined`,`null`
+
+简单数据类型`null`返回的是一个空对象`object`
+```js
+var timer = null;
+console.log(typeof timer);
+```
+
+
+## 复杂类型内存分配
+
+## 
+
+> todo 1 : 内置对象
+[> todo 2 : 内存分配](https://www.bilibili.com/video/BV1Sy4y1C7ha?p=188&spm_id_from=pageDriver&vd_source=cbeee4de613104de8bf0753a8c1feccc)
